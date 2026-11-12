@@ -14,7 +14,7 @@ namespace SchoolAppCoreRazor.Migrations
             migrationBuilder.CreateTable(
                 name: "Departments",
                 columns: table => new
-                {
+                { 
                     DepartmentID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DepartmentName = table.Column<string>(type: "nvarchar(max)", nullable: false),
