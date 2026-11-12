@@ -10,7 +10,7 @@ namespace SchoolAppCoreMVC.Migrations
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
-        {
+        { 
             migrationBuilder.CreateTable(
                 name: "Departments",
                 columns: table => new
