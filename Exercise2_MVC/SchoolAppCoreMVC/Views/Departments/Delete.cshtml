@@ -1,0 +1,25 @@
+@model SchoolAppCoreMVC.Models.Department
+@{
+    ViewData["Title"] = "Delete Department";
+}
+
+<h1>Delete</h1>
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Department</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">DepartmentName</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.DepartmentName)</dd>
+        <dt class="col-sm-3">Budget</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Budget)</dd>
+        <dt class="col-sm-3">StartDate</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.StartDate)</dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="DepartmentID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

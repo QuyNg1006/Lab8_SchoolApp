@@ -1,0 +1,33 @@
+@page
+@model SchoolAppCoreRazor.Pages.Students.IndexModel
+@{
+    ViewData["Title"] = "Students";
+}
+
+<h1>Students</h1>
+
+<p><a asp-page="Create" class="btn btn-primary">Create New</a></p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>LastName</th>
+                <th>FirstName</th>
+                <th>EnrollmentDate</th>
+                <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Items) {
+        <tr>
+                <td>@Html.DisplayFor(m => item.LastName)</td>
+                <td>@Html.DisplayFor(m => item.FirstName)</td>
+                <td>@Html.DisplayFor(m => item.EnrollmentDate)</td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.StudentID">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.StudentID">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.StudentID">Delete</a>
+                </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,41 @@
+@page
+@model SchoolAppCoreRazor.Pages.Students.CreateModel
+@{
+    ViewData["Title"] = "Create Student";
+}
+
+<h1>Create</h1>
+<h4>Student</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="Item.LastName" class="form-label">LastName</label>
+                <input asp-for="Item.LastName" class="form-control" />
+                <span asp-validation-for="Item.LastName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Item.FirstName" class="form-label">FirstName</label>
+                <input asp-for="Item.FirstName" class="form-control" />
+                <span asp-validation-for="Item.FirstName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Item.EnrollmentDate" class="form-label">EnrollmentDate</label>
+                <input asp-for="Item.EnrollmentDate" class="form-control" />
+                <span asp-validation-for="Item.EnrollmentDate" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

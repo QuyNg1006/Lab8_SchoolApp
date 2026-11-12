@@ -1,0 +1,26 @@
+@page
+@model SchoolAppCoreRazor.Pages.Courses.DeleteModel
+@{
+    ViewData["Title"] = "Delete Course";
+}
+
+<h1>Delete</h1>
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Course</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Title</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Item.Title)</dd>
+        <dt class="col-sm-3">Credits</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Item.Credits)</dd>
+        <dt class="col-sm-3">Department</dt>
+        <dd class="col-sm-9">@(Model.Item.Department?.DepartmentName)</dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Item.CourseID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

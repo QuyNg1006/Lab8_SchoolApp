@@ -1,0 +1,22 @@
+@model SchoolAppCoreMVC.Models.Course
+@{
+    ViewData["Title"] = "Course Details";
+}
+
+<h1>Details</h1>
+<div>
+    <h4>Course</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Title</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Title)</dd>
+        <dt class="col-sm-3">Credits</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Credits)</dd>
+        <dt class="col-sm-3">Department</dt>
+        <dd class="col-sm-9">@(Model.Department?.DepartmentName)</dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CourseID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
